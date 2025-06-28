@@ -143,80 +143,80 @@
             "Disruptive": {
                 "color": "#F97316",
                 "sub": {
-                    "Vocal": [
-                        "Talking",
-                        "Profanity",
-                        "Other Vocal"
-                    ],
                     "Noise": [
-                        "Tapping",
-                        "Shouting",
-                        "Other Noise"
+                        { "label": "Shouting", "chip": "Shouting" },
+                        { "label": "Tapping", "chip": "Tapping" },
+                        { "label": "Other", "chip": "Noise" }
                     ],
                     "Non-Comply": [
-                        "No Response",
-                        "Says \"No\"",
-                        "Warnings"
+                        { "label": "No Response", "chip": "No Response" },
+                        { "label": "Warnings", "chip": "Warnings" },
+                        { "label": "Other", "chip": "Non-Comply" }
+                    ],
+                    "Vocal": [
+                        { "label": "Profanity", "chip": "Profanity" },
+                        { "label": "Talking", "chip": "Talking" },
+                        { "label": "Other", "chip": "Vocal" }
                     ]
                 }
             },
             "Social/Emotional": {
                 "color": "#EC4899",
                 "sub": {
-                    "Peer Clash": [
-                        "Name Call",
-                        "Arguing",
-                        "Other Conflict"
-                    ],
                     "Distress": [
-                        "Crying",
-                        "Angry",
-                        "Other Distress"
+                        { "label": "Angry", "chip": "Angry" },
+                        { "label": "Crying", "chip": "Crying" },
+                        { "label": "Other", "chip": "Distress" }
+                    ],
+                    "Peer Clash": [
+                        { "label": "Arguing", "chip": "Arguing" },
+                        { "label": "Name Call", "chip": "Name Call" },
+                        { "label": "Other", "chip": "Peer Clash" }
                     ],
                     "Withdrawal": [
-                        "Head Down",
-                        "Leaves Group",
-                        "Other Withdrawal"
+                        { "label": "Head Down", "chip": "Head Down" },
+                        { "label": "Leaves Group", "chip": "Leaves Group" },
+                        { "label": "Other", "chip": "Withdrawal" }
                     ]
                 }
             },
             "Avoidance": {
                 "color": "#10B981",
                 "sub": {
+                    "Out Seat": [
+                        { "label": "By Door", "chip": "By Door" },
+                        { "label": "Wandering", "chip": "Wandering" },
+                        { "label": "Other", "chip": "Out Seat" }
+                    ],
                     "Passive": [
-                        "No Work",
-                        "Sleeping",
-                        "Drawing"
+                        { "label": "No Work", "chip": "No Work" },
+                        { "label": "Sleeping", "chip": "Sleeping" },
+                        { "label": "Other", "chip": "Passive" }
                     ],
                     "Work Delay": [
-                        "Bathroom",
-                        "Water Break",
-                        "Need Supply"
-                    ],
-                    "Out Seat": [
-                        "Wandering",
-                        "By Door",
-                        "Other OutSeat"
+                        { "label": "Bathroom", "chip": "Bathroom" },
+                        { "label": "Needs Supplies", "chip": "Needs Supplies" },
+                        { "label": "Other", "chip": "Work Delay" }
                     ]
                 }
             },
             "Eloping": {
                 "color": "#38BDF8",
                 "sub": {
-                    "Left Class": [
-                        "Hallway",
-                        "Restroom",
-                        "Other Loc"
-                    ],
                     "Left Bldg": [
-                        "Playground",
-                        "Parking Lot",
-                        "Other Out"
+                        { "label": "Parking Lot", "chip": "Parking Lot" },
+                        { "label": "Playground", "chip": "Playground" },
+                        { "label": "Other", "chip": "Left Bldg" }
+                    ],
+                    "Left Class": [
+                        { "label": "Hallway", "chip": "Hallway" },
+                        { "label": "Restroom", "chip": "Restroom" },
+                        { "label": "Other", "chip": "Left Class" }
                     ],
                     "Missing": [
-                        "Off Campus",
-                        "Police Notif",
-                        "Unknown"
+                        { "label": "Off Campus", "chip": "Off Campus" },
+                        { "label": "Not Located", "chip": "Not Located" },
+                        { "label": "Other", "chip": "Missing" }
                     ]
                 }
             },
@@ -224,39 +224,39 @@
                 "color": "#A855F7",
                 "sub": {
                     "Minor Agg": [
-                        "Light Hit",
-                        "Light Kick",
-                        "Grab"
+                        { "label": "Light Strike", "chip": "Light Strike" },
+                        { "label": "Push", "chip": "Push" },
+                        { "label": "Other", "chip": "Minor Agg" }
                     ],
-                    "Prop Misuse": [
-                        "Throw Obj",
-                        "Knock Over",
-                        "Tear Item"
+                    "Property Misuse": [
+                        { "label": "Knock Over", "chip": "Knock Over" },
+                        { "label": "Throw Obj", "chip": "Throw Obj" },
+                        { "label": "Other", "chip": "Property Misuse" }
                     ],
-                    "Threat Post": [
-                        "Fist Raise",
-                        "Step Fwd",
-                        "Other Threat"
+                    "Threat Posture": [
+                        { "label": "Fist Raise", "chip": "Fist Raise" },
+                        { "label": "Step Fwd", "chip": "Step Fwd" },
+                        { "label": "Other", "chip": "Threat Posture" }
                     ]
                 }
             },
             "Major-Physical": {
                 "color": "#DC3545",
                 "sub": {
-                    "Severe Agg": [
-                        "Punch",
-                        "Weapon Use",
-                        "Bite"
-                    ],
-                    "Severe Prop": [
-                        "Break Win",
-                        "Throw Chair",
-                        "Pull Alarm"
-                    ],
                     "Self-Injury": [
-                        "Head Bang",
-                        "Cutting",
-                        "Other Harm"
+                        { "label": "Minor Self-Harm", "chip": "Minor Self-Harm" },
+                        { "label": "Severe Self-Harm", "chip": "Severe Self-Harm" },
+                        { "label": "Other", "chip": "Self-Injury" }
+                    ],
+                    "Severe Aggression": [
+                        { "label": "Severe Strike", "chip": "Severe Strike" },
+                        { "label": "Dangerous Throw", "chip": "Dangerous Throw" },
+                        { "label": "Other", "chip": "Severe Aggression" }
+                    ],
+                    "Severe Property": [
+                        { "label": "Break Window", "chip": "Break Window" },
+                        { "label": "Throw Chair", "chip": "Throw Chair" },
+                        { "label": "Other", "chip": "Severe Property" }
                     ]
                 }
             }
@@ -302,7 +302,6 @@
             modalTitle.textContent = category;
             
             const hexColor = DATA[category].color;
-            // Convert HEX to RGB for modal title and gradient
             const rgbColor = parseInt(hexColor.slice(1), 16);
             const r = (rgbColor >> 16) & 255;
             const g = (rgbColor >> 8) & 255;
@@ -310,17 +309,14 @@
             
             modalTitle.style.color = hexColor;
 
-            // Define subtle gradient colors using RGBA - increased opacity for more saturation
-            const primaryColorSubtle = `rgba(${r}, ${g}, ${b}, 0.15)`; // More saturated
-            const secondaryColorSubtle = `rgba(${r}, ${g}, ${b}, 0.08)`; // More saturated for variation
+            const primaryColorSubtle = `rgba(${r}, ${g}, ${b}, 0.15)`;
+            const secondaryColorSubtle = `rgba(${r}, ${g}, ${b}, 0.08)`;
 
-            // Apply a linear gradient with a large background-size and the new animation class
             modalSheet.style.background = `linear-gradient(135deg, ${primaryColorSubtle} 0%, ${secondaryColorSubtle} 50%, ${primaryColorSubtle} 100%), #F8F9FA`;
             modalSheet.style.backgroundSize = `400% 400%`;
-            // Ensure the background covers the entire modal sheet
-            modalSheet.style.backgroundAttachment = 'scroll'; // Default is scroll, but being explicit.
-            modalSheet.classList.remove('animated-gradient'); // Remove old class if it exists
-            modalSheet.classList.add('modal-background-effect'); // Add new animation class
+            modalSheet.style.backgroundAttachment = 'scroll';
+            modalSheet.classList.remove('animated-gradient');
+            modalSheet.classList.add('modal-background-effect');
             
             renderModalContent();
             modalContainer.classList.remove('hidden');
@@ -334,10 +330,10 @@
             modalSheet.classList.add('hidden');
             setTimeout(() => {
                 modalContainer.classList.add('hidden');
-                modalSheet.classList.remove('modal-background-effect'); // Remove the animation class
-                modalSheet.style.background = ''; // Reset background
-                modalSheet.style.backgroundSize = ''; // Reset background-size
-                modalSheet.style.backgroundAttachment = ''; // Reset background-attachment
+                modalSheet.classList.remove('modal-background-effect');
+                modalSheet.style.background = '';
+                modalSheet.style.backgroundSize = '';
+                modalSheet.style.backgroundAttachment = '';
             }, 300);
         };
         
@@ -363,14 +359,12 @@
             if (!currentCategory) return;
             modalContent.innerHTML = '';
             
-            // Apply frosted glass effect here
             const listContainer = document.createElement('div');
-            // Increased translucency (bg-white/60) and blur (backdrop-blur-lg) for frosted glass
             listContainer.className = 'bg-white/60 backdrop-blur-lg rounded-xl border border-gray-200/80 divide-y divide-gray-200/80'; 
             modalContent.appendChild(listContainer);
 
             const categoryData = DATA[currentCategory];
-            Object.keys(categoryData.sub).forEach((subCategory, index) => {
+            Object.keys(categoryData.sub).forEach((subCategory) => {
                 const section = document.createElement('div');
                 section.className = 'p-3';
 
@@ -382,23 +376,22 @@
                 const chipGroup = document.createElement('div');
                 chipGroup.className = 'grid grid-cols-3 gap-2';
                 
-                categoryData.sub[subCategory].forEach(detail => {
-                    const isSelected = selectedItems.some(item => item.detail === detail && item.category === currentCategory && item.subCategory === subCategory);
-                    const chip = document.createElement('button');
-                    chip.textContent = detail;
-                    // Changed non-selected chips back to bg-gray-200
-                    chip.className = `w-full px-2 py-3 text-xs font-medium rounded-lg transition-colors text-center ${
+                categoryData.sub[subCategory].forEach(detailObj => {
+                    const isSelected = selectedItems.some(item => item.detail === detailObj.label && item.category === currentCategory && item.subCategory === subCategory);
+                    const button = document.createElement('button');
+                    button.textContent = detailObj.label;
+                    button.className = `w-full px-2 py-3 text-xs font-medium rounded-lg transition-colors text-center break-words ${
                         isSelected 
                         ? 'text-white shadow-md' 
                         : 'bg-gray-200 text-gray-800' 
                     }`;
-                     chip.style.backgroundColor = isSelected ? DATA[currentCategory].color : '';
+                     button.style.backgroundColor = isSelected ? DATA[currentCategory].color : '';
                      if(isSelected) {
-                        chip.classList.remove('bg-gray-200'); // Ensure this is removed if selected
+                        button.classList.remove('bg-gray-200');
                      }
                      
-                    chip.onclick = () => toggleSelection(currentCategory, subCategory, detail);
-                    chipGroup.appendChild(chip);
+                    button.onclick = () => toggleSelection(currentCategory, subCategory, detailObj);
+                    chipGroup.appendChild(button);
                 });
 
                 section.appendChild(chipGroup);
@@ -406,12 +399,12 @@
             });
         };
         
-        const toggleSelection = (category, subCategory, detail) => {
-            const index = selectedItems.findIndex(item => item.detail === detail && item.category === category && item.subCategory === subCategory);
+        const toggleSelection = (category, subCategory, detailObj) => {
+            const index = selectedItems.findIndex(item => item.detail === detailObj.label && item.category === category && item.subCategory === subCategory);
             if (index > -1) {
                 selectedItems.splice(index, 1);
             } else {
-                selectedItems.push({ category, subCategory, detail });
+                selectedItems.push({ category, subCategory, detail: detailObj.label, chip: detailObj.chip });
             }
             renderModalContent();
             renderChips();
@@ -421,20 +414,20 @@
         const renderChips = () => {
             chipsContainer.innerHTML = '';
             selectedItems.forEach((item, index) => {
-                const chip = document.createElement('div');
-                chip.className = 'flex items-center gap-2 text-sm text-white px-3 py-1 rounded-full';
-                chip.style.backgroundColor = DATA[item.category].color;
-                chip.innerHTML = `
-                    <span>${item.detail}</span>
+                const chipElement = document.createElement('div');
+                chipElement.className = 'flex items-center gap-2 text-sm text-white px-3 py-1 rounded-full';
+                chipElement.style.backgroundColor = DATA[item.category].color;
+                chipElement.innerHTML = `
+                    <span>${item.chip}</span>
                     <button class="font-bold text-lg leading-none">&times;</button>
                 `;
-                chip.querySelector('button').onclick = () => {
+                chipElement.querySelector('button').onclick = () => {
                     selectedItems.splice(index, 1);
                     renderModalContent();
                     renderChips();
                     updateActionBar();
                 };
-                chipsContainer.appendChild(chip);
+                chipsContainer.appendChild(chipElement);
             });
         };
         
@@ -472,7 +465,6 @@
                 actionBar.classList.remove('urgent-active');
             }
             
-            // Update Add/Edit Note button
             if (note.content) {
                 addNoteBtn.innerHTML = editIcon;
                 addNoteBtn.classList.remove('bg-blue-100', 'text-blue-600');
@@ -483,7 +475,6 @@
                  addNoteBtn.classList.add('bg-blue-100', 'text-blue-600');
             }
             
-            // Update Urgent button
             if (isUrgent) {
                 urgentBtn.classList.remove('bg-gray-200', 'text-gray-600');
                 urgentBtn.classList.add('bg-amber-400', 'text-white');
@@ -491,7 +482,6 @@
                 urgentBtn.classList.add('bg-gray-200', 'text-gray-600');
                 urgentBtn.classList.remove('bg-amber-400', 'text-white');
             }
-
 
             adjustLayoutForBottomBar();
         };
