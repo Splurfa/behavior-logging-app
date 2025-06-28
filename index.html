@@ -60,8 +60,8 @@
                 <div class="w-10 h-1.5 bg-gray-300 rounded-full mx-auto mb-3"></div>
                 <h2 id="modal-title" class="text-2xl font-bold text-gray-900 text-center">Category</h2>
             </header>
-            <div id="modal-content" class="overflow-y-auto px-4 md:px-6 space-y-5 pb-8">
-                 <!-- Subcategories and details will be injected here in a matrix -->
+            <div id="modal-content" class="overflow-y-auto px-4 md:px-6 space-y-4 pb-8">
+                 <!-- Subcategories and details will be injected here in a grouped list -->
             </div>
         </div>
     </div>
@@ -211,35 +211,37 @@
 
             const categoryData = DATA[currentCategory];
             for (const subCategory in categoryData.sub) {
-                const row = document.createElement('div');
-                row.className = 'flex flex-col items-center gap-2';
+                const section = document.createElement('div');
+                section.className = 'bg-white rounded-xl border border-gray-200 p-4';
                 
-                const label = document.createElement('div');
-                label.className = 'text-sm font-semibold text-gray-600';
-                label.textContent = subCategory;
-                row.appendChild(label);
+                const header = document.createElement('h3');
+                header.className = 'text-md font-bold text-gray-800 mb-3';
+                header.textContent = subCategory;
+                section.appendChild(header);
 
                 const chipGroup = document.createElement('div');
-                chipGroup.className = 'w-full flex items-center gap-2';
+                chipGroup.className = 'grid grid-cols-3 gap-2';
                 
                 categoryData.sub[subCategory].forEach(detail => {
                     const isSelected = selectedItems.some(item => item.detail === detail && item.category === currentCategory && item.subCategory === subCategory);
                     const chip = document.createElement('button');
                     chip.textContent = detail;
-                    chip.className = `flex-1 px-2 py-3 text-xs font-medium rounded-lg transition-colors text-center ${
+                    chip.className = `w-full px-2 py-3 text-xs font-medium rounded-lg transition-colors text-center ${
                         isSelected 
                         ? 'text-white shadow-md' 
-                        : 'bg-white border border-gray-300 text-gray-700'
+                        : 'bg-gray-100 text-gray-700'
                     }`;
                      chip.style.backgroundColor = isSelected ? DATA[currentCategory].color : '';
-                     if(isSelected) chip.classList.remove('bg-white', 'border', 'border-gray-300');
+                     if(isSelected) {
+                        chip.classList.remove('bg-gray-100');
+                     }
                      
                     chip.onclick = () => toggleSelection(currentCategory, subCategory, detail);
                     chipGroup.appendChild(chip);
                 });
 
-                row.appendChild(chipGroup);
-                modalContent.appendChild(row);
+                section.appendChild(chipGroup);
+                modalContent.appendChild(section);
             }
         };
         
