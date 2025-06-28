@@ -31,7 +31,7 @@
             transition: opacity 0.3s ease-in-out;
         }
         .modal-sheet {
-            transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1), background 0.3s ease-in-out;
+            transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
         }
         .modal-sheet.is-dragging {
             transition: none;
@@ -45,6 +45,17 @@
         }
         .urgent-active {
             animation: urgent-pulse 2.5s infinite ease-in-out;
+        }
+        /* New animation for the modal background */
+        @keyframes subtle-shift {
+            /* Start from bottom-left (0% horizontal, 100% vertical) */
+            0% { background-position: 0% 100%; }
+            /* End at top-right (100% horizontal, 0% vertical) */
+            100% { background-position: 100% 0%; }
+        }
+        .modal-background-effect {
+            background-size: 400% 400%; /* Make it larger to allow for movement */
+            animation: subtle-shift 25s linear infinite alternate; /* Slower, continuous movement (25s) */
         }
     </style>
 </head>
@@ -177,15 +188,26 @@
             modalTitle.textContent = category;
             
             const hexColor = DATA[category].color;
+            // Convert HEX to RGB for modal title and gradient
             const rgbColor = parseInt(hexColor.slice(1), 16);
             const r = (rgbColor >> 16) & 255;
             const g = (rgbColor >> 8) & 255;
             const b = rgbColor & 255;
             
             modalTitle.style.color = hexColor;
-            modalSheet.style.background = `linear-gradient(to bottom, rgba(${r}, ${g}, ${b}, 0.15), transparent 60%), #F8F9FA`;
 
+            // Define subtle gradient colors using RGBA - increased opacity for more saturation
+            const primaryColorSubtle = `rgba(${r}, ${g}, ${b}, 0.15)`; // More saturated
+            const secondaryColorSubtle = `rgba(${r}, ${g}, ${b}, 0.08)`; // More saturated for variation
 
+            // Apply a linear gradient with a large background-size and the new animation class
+            modalSheet.style.background = `linear-gradient(135deg, ${primaryColorSubtle} 0%, ${secondaryColorSubtle} 50%, ${primaryColorSubtle} 100%), #F8F9FA`;
+            modalSheet.style.backgroundSize = `400% 400%`;
+            // Ensure the background covers the entire modal sheet
+            modalSheet.style.backgroundAttachment = 'scroll'; // Default is scroll, but being explicit.
+            modalSheet.classList.remove('animated-gradient'); // Remove old class if it exists
+            modalSheet.classList.add('modal-background-effect'); // Add new animation class
+            
             renderModalContent();
             modalContainer.classList.remove('hidden');
             requestAnimationFrame(() => {
@@ -198,7 +220,10 @@
             modalSheet.classList.add('hidden');
             setTimeout(() => {
                 modalContainer.classList.add('hidden');
-                modalSheet.style.background = '';
+                modalSheet.classList.remove('modal-background-effect'); // Remove the animation class
+                modalSheet.style.background = ''; // Reset background
+                modalSheet.style.backgroundSize = ''; // Reset background-size
+                modalSheet.style.backgroundAttachment = ''; // Reset background-attachment
             }, 300);
         };
         
@@ -224,8 +249,10 @@
             if (!currentCategory) return;
             modalContent.innerHTML = '';
             
+            // Apply frosted glass effect here
             const listContainer = document.createElement('div');
-            listContainer.className = 'bg-white rounded-xl border border-gray-200 divide-y divide-gray-200';
+            // Increased translucency (bg-white/60) and blur (backdrop-blur-lg) for frosted glass
+            listContainer.className = 'bg-white/60 backdrop-blur-lg rounded-xl border border-gray-200/80 divide-y divide-gray-200/80'; 
             modalContent.appendChild(listContainer);
 
             const categoryData = DATA[currentCategory];
@@ -245,14 +272,15 @@
                     const isSelected = selectedItems.some(item => item.detail === detail && item.category === currentCategory && item.subCategory === subCategory);
                     const chip = document.createElement('button');
                     chip.textContent = detail;
+                    // Changed non-selected chips back to bg-gray-200
                     chip.className = `w-full px-2 py-3 text-xs font-medium rounded-lg transition-colors text-center ${
                         isSelected 
                         ? 'text-white shadow-md' 
-                        : 'bg-gray-100 text-gray-700'
+                        : 'bg-gray-200 text-gray-800' 
                     }`;
                      chip.style.backgroundColor = isSelected ? DATA[currentCategory].color : '';
                      if(isSelected) {
-                        chip.classList.remove('bg-gray-100');
+                        chip.classList.remove('bg-gray-200'); // Ensure this is removed if selected
                      }
                      
                     chip.onclick = () => toggleSelection(currentCategory, subCategory, detail);
