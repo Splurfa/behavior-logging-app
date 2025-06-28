@@ -140,12 +140,126 @@
 
     <script>
         const DATA = {
-            "Disruptive": { color: '#F97316', sub: { "Verbal": ["Interruptions", "Language", "Defiance"], "Noise": ["Tapping", "Vocalizations", "Tech"], "Compliance": ["Ignoring", "Refusal", "Arguing"] } },
-            "Social / Emotional": { color: '#EC4899', sub: { "Peer Conflict": ["Teasing", "Intimidation", "Boundaries"], "Distress": ["Upset", "Anxious", "Anger"], "Withdrawal": ["Avoiding", "Non-responsive", "Distancing"] } },
-            "Avoidance": { color: '#10B981', sub: { "Passive": ["No work", "Disengaged", "Minimal"], "Delay": ["Stalling", "Off-topic", "Prepping"], "Distraction": ["Escape", "Somatic", "Other tasks"] } },
-            "Eloping": { color: '#38BDF8', sub: { "In-Room": ["Wandering", "Hovering", "Zone"], "Out-of-Room": ["Hallway", "Restroom", "Other class"], "Campus": ["Exits", "Playground", "Off-grounds"] } },
-            "Minor-Physical": { color: '#A855F7', sub: { "Aggression": ["Light contact", "Gestures", "Space"], "Property": ["Misuse", "Minor damage", "Mess"], "Posture": ["Posturing", "Stance", "Glare"] } },
-            "Major-Physical": { color: '#DC3545', sub: { "Aggression": ["Forceful", "Hitting/Kicking", "Assault"], "Self-Injury": ["Head-banging", "Self-hitting", "Self-harm"], "Property": ["Breaking", "Throwing", "Vandalism"] } }
+            "Disruptive": {
+                "color": "#F97316",
+                "sub": {
+                    "Vocal": [
+                        "Talking",
+                        "Profanity",
+                        "Other Vocal"
+                    ],
+                    "Noise": [
+                        "Tapping",
+                        "Shouting",
+                        "Other Noise"
+                    ],
+                    "Non-Comply": [
+                        "No Response",
+                        "Says \"No\"",
+                        "Warnings"
+                    ]
+                }
+            },
+            "Social/Emotional": {
+                "color": "#EC4899",
+                "sub": {
+                    "Peer Clash": [
+                        "Name Call",
+                        "Arguing",
+                        "Other Conflict"
+                    ],
+                    "Distress": [
+                        "Crying",
+                        "Angry",
+                        "Other Distress"
+                    ],
+                    "Withdrawal": [
+                        "Head Down",
+                        "Leaves Group",
+                        "Other Withdrawal"
+                    ]
+                }
+            },
+            "Avoidance": {
+                "color": "#10B981",
+                "sub": {
+                    "Passive": [
+                        "No Work",
+                        "Sleeping",
+                        "Drawing"
+                    ],
+                    "Work Delay": [
+                        "Bathroom",
+                        "Water Break",
+                        "Need Supply"
+                    ],
+                    "Out Seat": [
+                        "Wandering",
+                        "By Door",
+                        "Other OutSeat"
+                    ]
+                }
+            },
+            "Eloping": {
+                "color": "#38BDF8",
+                "sub": {
+                    "Left Class": [
+                        "Hallway",
+                        "Restroom",
+                        "Other Loc"
+                    ],
+                    "Left Bldg": [
+                        "Playground",
+                        "Parking Lot",
+                        "Other Out"
+                    ],
+                    "Missing": [
+                        "Off Campus",
+                        "Police Notif",
+                        "Unknown"
+                    ]
+                }
+            },
+            "Minor-Physical": {
+                "color": "#A855F7",
+                "sub": {
+                    "Minor Agg": [
+                        "Light Hit",
+                        "Light Kick",
+                        "Grab"
+                    ],
+                    "Prop Misuse": [
+                        "Throw Obj",
+                        "Knock Over",
+                        "Tear Item"
+                    ],
+                    "Threat Post": [
+                        "Fist Raise",
+                        "Step Fwd",
+                        "Other Threat"
+                    ]
+                }
+            },
+            "Major-Physical": {
+                "color": "#DC3545",
+                "sub": {
+                    "Severe Agg": [
+                        "Punch",
+                        "Weapon Use",
+                        "Bite"
+                    ],
+                    "Severe Prop": [
+                        "Break Win",
+                        "Throw Chair",
+                        "Pull Alarm"
+                    ],
+                    "Self-Injury": [
+                        "Head Bang",
+                        "Cutting",
+                        "Other Harm"
+                    ]
+                }
+            }
         };
 
         // State
